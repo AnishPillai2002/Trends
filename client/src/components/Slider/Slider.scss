@@ -1,0 +1,50 @@
+.slider{
+    height: calc(100vh - 80px);
+    width: 100vw;
+
+    position: relative; //for positioning child buttons
+
+    .container{
+        width: 300vw; //since we have 3 images
+        height: 100%; //full height of the slider component
+        display:flex;
+
+        //animation
+        transition: all 1s ease;
+        
+        img{
+            height: 100%;
+            width: 100vw;
+        
+            object-fit: cover;
+        }  
+    }
+
+    .icons{
+        position: absolute;
+        display: flex;
+        
+        //positioning at center
+        width: fit-content;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 100px;
+
+        gap: 10px;
+
+        .icon{
+            height: 50px;
+            width: 50px;
+            border: 1px solid gray;
+
+            //aligning the arrow mark
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+    }
+    
+}
