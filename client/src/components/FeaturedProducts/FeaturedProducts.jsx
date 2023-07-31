@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+//importing axios for fetching data from strapi 
+import axios from "axios";
 
 //importing Cards
 import Card from "../Card/Card.jsx";
@@ -44,7 +47,26 @@ const FeaturedProducts = ({type}) => {
     },
   ];
 
+  //initially the Featured product is empty
+  const[product,setProduct]=useState([]);
 
+  //useEffect to fetch data
+  useEffect(()=>{
+    const fetchData = async()=>{
+        try{
+            const data = await axios.get(import.meta.env.VITE_API_URL+"/products",
+                {
+                    headers:{Authorization:"bearer"+import.meta.env.env.VITE_API_TOKEN}
+                });
+
+            console.log(data);
+        }catch(err){
+            console.log(err);
+        }
+    };
+
+    fetchData();
+  },[])
 
   return (
     <div className='featured'>
