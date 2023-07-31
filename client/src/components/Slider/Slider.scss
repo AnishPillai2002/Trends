@@ -3,7 +3,7 @@
     width: 100vw;
 
     position: relative; //for positioning child buttons
-
+    overflow-x: hidden;
     .container{
         width: 300vw; //since we have 3 images
         height: 100%; //full height of the slider component
